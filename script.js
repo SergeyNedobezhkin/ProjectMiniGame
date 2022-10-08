@@ -1,12 +1,12 @@
 'use strict';
 const randomNumber = (Math.floor(Math.random() * 100) + 1);
-console.log(randomNumber);
+let userNumber;
 const isNumber = function (num) {
     return !isNaN(parseFloat(num)) && isFinite(num);
 };
 
 function playerValue() {
-    let userNumber = prompt("Угадай число от 1 до 100");
+    userNumber = prompt("Угадай число от 1 до 100");
     if (userNumber === null) {
         return alert("Игра окончена");
     } else {
