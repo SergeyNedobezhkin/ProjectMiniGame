@@ -1,18 +1,16 @@
 'use strict';
+let randomNumber = (Math.floor(Math.random() * 100) + 1);
 
 const isNumber = function (num) {
     return !isNaN(parseFloat(num)) && isFinite(num);
 };
 
-function playerValue(userNumber, randomNumber) {
-    randomNumber = (Math.floor(Math.random() * 100) + 1);
-    userNumber = +prompt("Угадай число от 1 до 100");
-
-    if (userNumber !== 0) {
-        return game();
+function playerValue() {
+    let userNumber = prompt("Угадай число от 1 до 100");
+    if (userNumber === null) {
+        return alert("Игра окончена");
     } else {
-        alert("Игра окончена");
-        return playerValue();
+        return game();
     }
 
     function game() {
@@ -22,12 +20,12 @@ function playerValue(userNumber, randomNumber) {
         } else if (userNumber > randomNumber) {
             alert("Загаданное число меньше, введите другое значение:");
             return playerValue();
-        } else if (userNumber === randomNumber) {
-            alert("Поздравляю, Вы угадали!!!");
-            return playerValue();
+
         } else if (!isNumber(userNumber)) {
             alert("Введи число!");
             return playerValue();
+        } else {
+            alert("Поздравляю, Вы угадали!!!");
         }
     }
 }
