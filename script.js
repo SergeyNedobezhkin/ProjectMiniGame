@@ -1,32 +1,30 @@
 'use strict';
-const randomNumber = (Math.floor(Math.random() * 100) + 1);
-let userNumber;
+
+let randomNumber;
+
 const isNumber = function (num) {
     return !isNaN(parseFloat(num)) && isFinite(num);
 };
 
-function playerValue() {
-    userNumber = prompt("Угадай число от 1 до 100");
-    if (userNumber === null) {
-        return alert("Игра окончена");
-    } else {
-        return game();
-    }
+function one(randomNumber) {
+    randomNumber = (Math.floor(Math.random() * 100) + 1);
 
-    function game() {
-        if (userNumber < randomNumber) {
-            alert("Загаданное число больше, введите другое значение:");
-            return playerValue();
-        } else if (userNumber > randomNumber) {
-            alert("Загаданное число меньше, введите другое значение:");
-            return playerValue();
+    function two() {
+        let userNumber = prompt("Угадай число от 1 до 100");
 
-        } else if (!isNumber(userNumber)) {
+        if (userNumber === null) {
+            alert("Игра окончена");
+        } else if (!isNumber(+userNumber)) {
             alert("Введи число!");
-            return playerValue();
+        } else if (+userNumber < randomNumber) {
+            alert("Загаданное число больше, введите другое значение:");
+        } else if (+userNumber > randomNumber) {
+            alert("Загаданное число меньше, введите другое значение:");
         } else {
             alert("Поздравляю, Вы угадали!!!");
         }
+        two();
     }
+    two();
 }
-playerValue();
+one();
