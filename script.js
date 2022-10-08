@@ -1,13 +1,13 @@
 'use strict';
 
-let randomNumber;
+
 
 const isNumber = function (num) {
     return !isNaN(parseFloat(num)) && isFinite(num);
 };
 
 function one(randomNumber) {
-    randomNumber = (Math.floor(Math.random() * 100) + 1);
+   randomNumber = (Math.floor(Math.random() * 100) + 1);
 
     function two() {
         let userNumber = prompt("Угадай число от 1 до 100");
