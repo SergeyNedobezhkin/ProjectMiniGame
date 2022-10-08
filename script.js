@@ -1,6 +1,6 @@
 'use strict';
-let randomNumber = (Math.floor(Math.random() * 100) + 1);
-
+const randomNumber = (Math.floor(Math.random() * 100) + 1);
+console.log(randomNumber);
 const isNumber = function (num) {
     return !isNaN(parseFloat(num)) && isFinite(num);
 };
