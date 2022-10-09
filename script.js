@@ -14,6 +14,7 @@ function one(randomNumber) {
 
         if (userNumber === null) {
             alert("Игра окончена");
+            return;
         } else if (!isNumber(+userNumber)) {
             alert("Введи число!");
         } else if (+userNumber < randomNumber) {
@@ -22,6 +23,7 @@ function one(randomNumber) {
             alert("Загаданное число меньше, введите другое значение:");
         } else {
             alert("Поздравляю, Вы угадали!!!");
+            return;
         }
         two();
     }
